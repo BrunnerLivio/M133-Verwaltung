@@ -1,0 +1,36 @@
+
+<div layout="row">
+	<section class="sidebar md-whiteframe-5dp " ng-class="menuClass">
+		<md-list ng-cloak >
+			<md-list-item  ng-click="openNewProject()">
+				<p >Neues Projekt erstellen</p>		
+				<md-icon md-svg-icon="images/icons/add182.svg" style="color:white" aria-label="Projekt erstellen"></md-icon>
+				<md-checkbox></md-checkbox>
+			</md-list-item>
+			<md-divider ></md-divider>
+			<md-list-item ng-repeat="class in classes" ng-click="href('/class/{{class.Id}}')">
+				<p>{{class.Name}}</p>
+				<md-checkbox></md-checkbox>
+			</md-list-item>
+		</md-list>
+	</section>
+	<section flex class="project-overview">
+		<md-content flex>
+			<md-list>
+				<md-list-item class="md-3-line" ng-repeat="project in projects | orderBy: '-CreationDate'">
+					<div class="md-list-item-text">
+						<h2>{{project.Name}}</h2>
+						<h4>{{project.FirstName}} {{project.LastName}}</h4>
+						<p>
+							{{project.Notes}}
+						</p>
+					</div>
+					<md-divider inset></md-divider>
+				</md-list-item>
+			</md-list>
+		</md-content>
+		<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="newProjectSideNav">
+			<ng-include src="'partialViews/newProject.html'"></ng-include>
+		</md-sidenav>
+	</section>
+</div>

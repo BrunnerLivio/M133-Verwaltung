@@ -1,0 +1,49 @@
+<md-toolbar class="md-theme-light" >
+	<h1 class="md-toolbar-tools">Neues Projekt erstellen</h1>
+</md-toolbar>
+<md-content  layout-padding ng-controller="NewprojectCtrl">
+	<form name="projectForm">
+		<md-input-container flex>
+			<label for="projektName">Projektname</label>
+			<input required type="text" name="name" id="projektName" ng-model="newProject.Name" md-autofocus />
+			<div ng-messages="projectForm.name.$error">
+				<div ng-message="required">Dieses Feld muss anegeben werden.</div>
+			</div>
+		</md-input-container>
+		<md-input-container flex>
+			<label>Vorname</label>
+			<input required ng-model="newProject.FirstName" name="firstName" />
+			<div ng-messages="projectForm.firstName.$error">
+				<div ng-message="required">Dieses Feld muss anegeben werden.</div>
+			</div>
+		</md-input-container>
+		<md-input-container flex>
+			<label>Name</label>
+			<input required ng-model="newProject.LastName" name="lastName" />
+			<div ng-messages="projectForm.lastName.$error">
+				<div ng-message="required" >Dieses Feld muss anegeben werden.</div>
+			</div>
+		</md-input-container>
+		<md-input-container flex>
+			<label>Klasse</label>
+			<md-select ng-model="newProject.ClassId">
+			<md-optgroup label="Klassen">
+				<md-option name="classId" ng-value="class.Id" ng-repeat="class in classes">{{class.Name}}</md-option>
+			</md-optgroup>
+			</md-select>
+			<div ng-messages="projectForm.classId.$error">
+				<div ng-message="required">Dieses Feld muss anegeben werden.</div>
+			</div>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<label>Projektbeschreibung</label>
+			<textarea required ng-model="newProject.Notes" columns="1" md-maxlength="1000" name="notes"></textarea>
+			<div ng-messages="projectForm.notes.$error">
+				<div ng-message="required">Dieses Feld muss anegeben werden.</div>
+			</div>
+		</md-input-container>
+	</form>
+	<md-button ng-click="save(newProject)" class="md-primary">
+		Speichern
+	</md-button>
+</md-content>
