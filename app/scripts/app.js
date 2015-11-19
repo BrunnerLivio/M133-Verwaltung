@@ -20,7 +20,7 @@ angular
     'ngMessages',
     'angular-linq'
   ])
-  .config(function ($routeProvider, $mdThemingProvider) {
+  .config(function ($routeProvider, $mdThemingProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -68,4 +68,5 @@ angular
       $mdThemingProvider.theme('default')
         .primaryPalette('blue')
         .accentPalette('red');
+        $locationProvider.html5Mode(true);
   });
