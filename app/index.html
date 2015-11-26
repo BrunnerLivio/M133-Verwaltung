@@ -23,8 +23,9 @@
     <![endif]-->
     <div ng-controller="M133verwaltungCtrl">
       <md-toolbar md-scroll-shrink ng-controller="TitleCtrl" class="md-whiteframe-5dp titleBar" layout="row">
-        <md-button class="md-icon-button menu-button" aria-label="Menu" ng-click="openMenu()">
-          <md-icon md-svg-icon="icons/menu55.svg" ></md-icon>
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Menu" md-svg-icon="icons/menu55.svg">
+          </md-icon>
         </md-button>
         <div class="md-toolbar-tools  md-display-1">
           <h3 flex>

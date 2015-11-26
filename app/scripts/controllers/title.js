@@ -8,7 +8,7 @@
  * Controller of the m133VerwaltungApp
  */
 angular.module('m133VerwaltungApp')
-  .controller('TitleCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+  .controller('TitleCtrl', ['$scope', '$rootScope', '$mdSidenav', function ($scope, $rootScope, $mdSidenav) {
     $scope.title = "M133 Projekteverwaltung";
     $scope.openMenu = function(){
       $rootScope.$broadcast('menu', 'close');
@@ -16,4 +16,7 @@ angular.module('m133VerwaltungApp')
     $scope.$on('subtitle', function (event, arg) { 
       $scope.subtitle = arg;
     });
+    $scope.toggleSidenav = function(menuId) {
+      $mdSidenav(menuId).toggle();
+    };
   }]);

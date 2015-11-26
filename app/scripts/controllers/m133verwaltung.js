@@ -8,5 +8,6 @@
  * Controller of the m133VerwaltungApp
  */
 angular.module('m133VerwaltungApp')
-  .controller('M133verwaltungCtrl', function () {
+  .controller('M133verwaltungCtrl', function ($mdSidenav) {
+    
   });
