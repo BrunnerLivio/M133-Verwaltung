@@ -56,3 +56,10 @@
     white-space: pre-wrap;
   }
 }
+.github{
+  color:white;
+  transition:0.5s ease-in-out color;
+  &:hover{
+    color:#424242;
+  }
+}

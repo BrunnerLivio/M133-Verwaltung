@@ -24,14 +24,20 @@
     <div ng-controller="M133verwaltungCtrl">
       <md-toolbar md-scroll-shrink ng-controller="TitleCtrl" class="md-whiteframe-5dp titleBar" layout="row">
         <md-button class="md-icon-button menu-button" aria-label="Menu" ng-click="openMenu()">
-          <md-icon md-svg-icon="icons/menu55.svg" style="color:white"></md-icon>
+          <md-icon md-svg-icon="icons/menu55.svg" ></md-icon>
         </md-button>
         <div class="md-toolbar-tools  md-display-1">
           <h3 flex>
             <span>{{title}}  <span ng-show="selectedClass"> > {{selectedClass.Name}}</span></span>
           </h3>
           <a href="https://github.com/BrunnerLivio/M133-Verwaltung">
-            <md-icon md-svg-icon="icons/github10.svg" class="github"></md-icon>
+            <md-button>
+              <md-icon md-svg-icon="icons/github10.svg" class="github"></md-icon>
+              <md-tooltip>
+                View Sourcecode
+              </md-tooltip>
+            </md-button>
+            
           </a>
         </div>
         
