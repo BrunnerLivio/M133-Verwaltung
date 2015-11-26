@@ -68,5 +68,4 @@ angular
       $mdThemingProvider.theme('default')
         .primaryPalette('blue')
         .accentPalette('red');
-        $locationProvider.html5Mode(true);
   });

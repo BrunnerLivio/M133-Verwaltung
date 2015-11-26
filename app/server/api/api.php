@@ -1,6 +1,12 @@
 <?php
 require("../dbconnect.php");
-header("Access-Control-Allow-Origin: *");
+if($debug){
+	header("Access-Control-Allow-Origin: *");
+} else {
+	header("Access-Control-Allow-Origin: http://m133.bplaced.net/");
+}
+	
+
 header("Content-Type: application/json; charset=UTF-8");
 
 ?>
