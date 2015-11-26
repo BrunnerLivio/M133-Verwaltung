@@ -11,14 +11,12 @@ angular.module('m133VerwaltungApp')
   .controller('MainCtrl', function ($scope, $mdSidenav, M133VerwaltungService, $mdToast, $rootScope, $location, $timeout, $routeParams, $linq, $q) {
     getData().then(function(){
       if($routeParams.classId != undefined){
-        console.log($scope.classes);
         var slClass = $linq.Enumerable().From($scope.classes)
         .Where(function(c){
           
           return c.Id == $routeParams.classId;
         })
         .FirstOrDefault();
-        
         if(slClass != null){
           openClass(slClass);
         }
@@ -53,7 +51,7 @@ angular.module('m133VerwaltungApp')
     });
     function openClass(klasse){
       $scope.selectedClass = klasse;
-      $rootScope.$broadcast('selectedClassChange', klasse);
+      $rootScope.$broadcast('subtitle', klasse.Name);
       M133VerwaltungService.getProjectsById(klasse.Id).then(function(data){
         $scope.projects = data;
       })

@@ -13,7 +13,7 @@ angular.module('m133VerwaltungApp')
     $scope.openMenu = function(){
       $rootScope.$broadcast('menu', 'close');
     }
-    $scope.$on('selectedClassChange', function (event, arg) { 
-      $scope.selectedClass = arg;
+    $scope.$on('subtitle', function (event, arg) { 
+      $scope.subtitle = arg;
     });
   }]);

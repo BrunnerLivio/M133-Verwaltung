@@ -1,0 +1,20 @@
+<br />
+<form ng-init="user={}">
+      <div layout="row" layout-align="center center">
+            <md-input-container class="md-icon-float md-block">
+                  <label>Benutzername</label>
+                  <md-icon md-svg-src="icons/users81.svg" class="name"></md-icon>
+                  <input ng-model="user.name" type="text">
+            </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+            <md-input-container class="md-icon-float md-block">
+                  <label>Passwort</label>
+                  <md-icon md-svg-src="icons/key162.svg" class="password"></md-icon>
+                  <input ng-model="user.password" type="password">
+            </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+            <md-button class="md-raised">Login</md-button>
+      </div>
+</form>
